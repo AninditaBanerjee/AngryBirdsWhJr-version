@@ -47,7 +47,7 @@ function setup(){
 }
 
 function draw(){
-    if(backgroundImg)
+   
         background(backgroundImg);
     
         noStroke();
@@ -100,19 +100,10 @@ function keyPressed(){
 }
 
 async function getBackgroundImg(){
-    var response = await fetch("http://worldtimeapi.org/api/timezone/Asia/Tokyo");
-    var responseJSON = await response.json();
-    console.log(responseJSON);
-    var datetime = responseJSON.datetime;
-    var hour = datetime.slice(11,13);
     
-    if(hour>=06 && hour<=18){
         bg = "sprites/bg1.png";
-    }
-    else{
-        bg = "sprites/bg2.jpg";
-    }
+    
 
     backgroundImg = loadImage(bg);
-    console.log(backgroundImg);
+    
 }
